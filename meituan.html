@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="卢祎璠的 AI 陪伴产品研究与体验设计作品集">
+  <meta name="theme-color" content="#f8f7f3">
+  <title>美团 WOW「伴伴」项目研究 · FAYNE</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body id="top" class="page-1">
+  <a class="skip" href="#main">跳到正文</a>
+  <header class="site-header"><div class="wrap header-inner"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">✳</span><span><b>FAYNE</b><small>AI COMPANION</small></span></a>
+    <button class="menu" type="button" aria-expanded="false" aria-controls="global-nav">菜单 <span aria-hidden="true">☰</span></button>
+    <nav id="global-nav" aria-label="网站导航"><a href="meituan.html" aria-current="page">美团 WOW</a><a href="conversation.html">对话质量</a><a href="prompt.html">角色 Prompt</a><a href="hardware.html">语音硬件</a><a class="about-nav" href="index.html#about">关于我 <span aria-hidden="true">↗</span></a></nav>
+  </div></header>
+  <main id="main"><section class="case-hero"><div class="wrap">
+      <a class="back" href="index.html#work">← 项目目录</a>
+      <div class="case-intro"><div><p class="eyebrow">CASE 01 · AI 产品经理实习生（用户研究方向）</p>
+      <h1>美团 WOW「伴伴」项目研究</h1>
+      <p class="prose">「伴伴」是美团 AI 产品 WOW 的新分支。我参与了从需求探索到正式内测的工作，主要负责用户研究，也参与用户招募、模型评测、功能原型和数据分析。</p></div>
+      <div class="case-emblem tone-1" aria-hidden="true"><span>MEITUAN WOW</span><svg class="icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="10" r="5"/><path d="M2.5 27v-3a8.5 8.5 0 0 1 17 0v3M21 6a5 5 0 0 1 0 9m2 3a8 8 0 0 1 6 8"/></svg><small>CASE 01</small></div></div></div></section>
+      <div class="wrap case-layout"><aside class="case-toc"><p class="eyebrow">本页内容</p><nav aria-label="本页内容"><a href="#path">研究路径</a><a href="#needs">需求探索</a><a href="#models">模型筛选</a><a href="#testing">正式内测</a></nav></aside>
+      <div class="chapters"><section class="chapter" id="path"><h2>三个阶段的研究路径</h2><ol class="research-path"><li><a href="#needs"><span class="step">01</span><strong>需求探索</strong><span class="path-question">用户在什么情况下需要 AI 陪伴？</span></a></li><li><a href="#models"><span class="step">02</span><strong>模型筛选</strong><span class="path-question">什么样的模型更适合做陪伴？</span></a></li><li><a href="#testing"><span class="step">03</span><strong>正式内测</strong><span class="path-question">用户实际用起来感受如何？</span></a></li></ol></section><section class="chapter" id="needs"><h2>01 需求探索</h2><p class="prose">为了给 WOW 的新分支「伴伴」确定方向，团队先了解核心用户怎么用 AI、在哪些场景需要陪伴。我通过小红书等渠道触达用户，负责设计并分析问卷，也参与了深度访谈。问卷覆盖用户背景、AI 使用频率与常用产品、使用场景与话题，以及分享满意回复的意愿。</p>
+      <details class="details"><summary>查看问卷题目示例</summary><ul class="bullets"><li>你主要使用哪些 AI？使用频率如何？</li><li>你在日常陪伴、情感支持、深度探讨等哪些场景使用 AI？</li><li>是否愿意分享一段令您满意的 AI 回复？</li></ul></details>
+      <div class="needs-charts"><figure class="chart" aria-labelledby="usage_scenarios"><h3 id="usage_scenarios">AI 陪伴用户使用场景</h3><figcaption>选中招募样本 · 多选 · 比例仅描述该样本，各项之和可超过 100%。</figcaption><ol class="bars"><li class="bar-row"><span>日常陪伴</span><span aria-hidden="true" class="bar-track"><span style="--fill:83.3%"></span></span><strong>83.3%</strong></li><li class="bar-row"><span>智力/哲学探讨</span><span aria-hidden="true" class="bar-track"><span style="--fill:78.3%"></span></span><strong>78.3%</strong></li><li class="bar-row"><span>情感支持</span><span aria-hidden="true" class="bar-track"><span style="--fill:76.7%"></span></span><strong>76.7%</strong></li><li class="bar-row"><span>生活/工作助理</span><span aria-hidden="true" class="bar-track"><span style="--fill:75.0%"></span></span><strong>75.0%</strong></li><li class="bar-row"><span>灵感与创意</span><span aria-hidden="true" class="bar-track"><span style="--fill:71.7%"></span></span><strong>71.7%</strong></li><li class="bar-row"><span>角色扮演</span><span aria-hidden="true" class="bar-track"><span style="--fill:51.7%"></span></span><strong>51.7%</strong></li><li class="bar-row"><span>娱乐</span><span aria-hidden="true" class="bar-track"><span style="--fill:35.0%"></span></span><strong>35.0%</strong></li></ol></figure><figure class="chart" aria-labelledby="desired_capabilities"><h3 id="desired_capabilities">用户眼中的理想 AI 应该是什么样</h3><figcaption>独立体验前反馈 · 最多选三项 · 比例反映用户期待，正式内测评分另行收集。</figcaption><ol class="bars"><li class="bar-row"><span>专属记忆</span><span aria-hidden="true" class="bar-track"><span style="--fill:81.3%"></span></span><strong>81.3%</strong></li><li class="bar-row"><span>情绪共情</span><span aria-hidden="true" class="bar-track"><span style="--fill:62.5%"></span></span><strong>62.5%</strong></li><li class="bar-row"><span>真实陪伴感</span><span aria-hidden="true" class="bar-track"><span style="--fill:37.5%"></span></span><strong>37.5%</strong></li><li class="bar-row"><span>意图理解</span><span aria-hidden="true" class="bar-track"><span style="--fill:37.5%"></span></span><strong>37.5%</strong></li><li class="bar-row"><span>逻辑与深度</span><span aria-hidden="true" class="bar-track"><span style="--fill:31.3%"></span></span><strong>31.3%</strong></li></ol></figure></div>
+      <p class="prose">调研记录中，每天使用 AI 的受访者占 <strong>88.46%</strong>。问卷和访谈让我看到了成长陪伴、角色扮演和情感治愈三类使用场景。</p>
+      <p class="prose">WOW 原有的 AI 陪伴体验侧重角色扮演。调研中，有人用 AI 寻求情绪支持，也有人用它讨论观点、梳理想法。团队据此给「伴伴」定了「陪伴＋成长」的方向。</p>
+      <aside class="callout"><b>我的提案 · 陪伴日记</b><p>我把用户对长期记忆的需求做成了「陪伴日记」功能原型。日记以角色视角记录重要经历和感受，这项功能进入了后续内测。</p></aside></section><section class="chapter" id="models"><h2>02 模型筛选</h2><p class="prose">我们将好的对话拆解为意图理解、情绪识别、共情承接、回复质量、逻辑一致性、记忆与角色连续性及互动节奏七个维度，并结合典型 Good Case 和 Bad Case 讨论不同模型的优势。</p>
+      <p class="prose">我主要从心理学角度提出情绪识别、共情承接等维度的评价标准，并独立设计场景化用例，参与候选模型的横向评测。</p>
+      <h3 id="rubric">把好的对话拆成七个评测维度</h3><ol class="evaluation"><li><span class="step">01</span><b>意图理解</b><span>有没有抓住用户真正的问题？</span></li><li><span class="step">02</span><b>情绪识别</b><span>有没有识别主导/混合情绪，避免过度揣测？</span></li><li><span class="step">03</span><b>共情承接</b><span>是不是回应了具体情境，而非套模板？</span></li><li><span class="step">04</span><b>回复质量</b><span>切题、自然、有信息量，长短恰当吗？</span></li><li><span class="step">05</span><b>逻辑一致性</b><span>单轮自洽、多轮前后不冲突吗？</span></li><li><span class="step">06</span><b>记忆与角色连续性</b><span>是否正确使用已知信息、不编造、不突然变人设？</span></li><li><span class="step">07</span><b>互动节奏</b><span>追问、主动引导和结束是否符合场景？</span></li></ol></section><section class="chapter" id="testing"><h2>03 对产品进行 AB 测试</h2><p class="prose">我们从前期参与者中招募了 62 名正式内测用户。每位用户先后体验两种匿名底层模型，两组以相反的顺序体验。我负责设计前测、中测和后测问卷，分析功能体验与模型表现，并输出内测报告。</p>
+      <figure class="diagram ab"><h3>AB / BA 交叉顺序</h3>
+      <div class="ab-row"><b>第一组</b><span>前测</span><span class="model-a">模型 A</span><span>中测</span><span class="model-b">模型 B</span><span>后测</span></div>
+      <div class="ab-row"><b>第二组</b><span>前测</span><span class="model-b">模型 B</span><span>中测</span><span class="model-a">模型 A</span><span>后测</span></div></figure>
+      <aside class="callout testing-findings"><b>内测发现与优化建议</b>
+        <p><strong>陪伴日记与长期记忆</strong> · 用户认可把记忆做成日记的形式，也反馈了记忆断裂、人设漂移等问题。我建议调整长期记忆的触发条件。</p>
+        <p><strong>情绪日历</strong> · 自动标签有时与用户感受不符。我在复盘时提出展示多个候选情绪，并允许用户确认、删除或修正。</p>
+      </aside></section></div></div></main><div class="next wrap"><a href="index.html#work">← 项目目录</a><a class="btn primary" href="conversation.html">下一案例 · 对话质量 <span aria-hidden="true">→</span></a></div>
+  <footer class="site-footer"><div class="wrap footer-inner"><div><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">✳</span><span><b>FAYNE</b><small>AI COMPANION</small></span></a><p>商业项目数据经脱敏处理。对话质量页的对话为教学示例。</p></div>
+    <nav aria-label="页脚导航"><a href="index.html#work">项目目录</a><a href="index.html#about">关于我</a><a href="#top">回到顶部 ↑</a></nav>
+  </div></footer>
+</body></html>

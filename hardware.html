@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="卢祎璠的 AI 陪伴产品研究与体验设计作品集">
+  <meta name="theme-color" content="#f8f7f3">
+  <title>如果AI陪伴可以离开手机屏幕？ · FAYNE</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body id="top" class="page-4">
+  <a class="skip" href="#main">跳到正文</a>
+  <header class="site-header"><div class="wrap header-inner"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">✳</span><span><b>FAYNE</b><small>AI COMPANION</small></span></a>
+    <button class="menu" type="button" aria-expanded="false" aria-controls="global-nav">菜单 <span aria-hidden="true">☰</span></button>
+    <nav id="global-nav" aria-label="网站导航"><a href="meituan.html">美团 WOW</a><a href="conversation.html">对话质量</a><a href="prompt.html">角色 Prompt</a><a href="hardware.html" aria-current="page">语音硬件</a><a class="about-nav" href="index.html#about">关于我 <span aria-hidden="true">↗</span></a></nav>
+  </div></header>
+  <main id="main"><section class="case-hero"><div class="wrap">
+      <a class="back" href="index.html#work">← 项目目录</a>
+      <div class="case-intro"><div><p class="eyebrow">CASE 04 · AI 智能对话玩偶 · 项目负责人</p>
+      <h1>如果AI陪伴可以离开手机屏幕？</h1><p class="subtitle">便携式语音陪伴硬件</p>
+      <p class="prose">我做了一款面向虚拟陪伴用户的便携硬件，可以实时语音对话，出门也能随身携带。我负责用户访谈、原型设计、硬件选型、电路焊接和原型测试。</p></div>
+      <div class="case-emblem tone-4" aria-hidden="true"><span>VOICE HARDWARE</span><svg class="icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="20" height="24" rx="7"/><path d="M10 16v2m4-6v9m4-12v13m4-7v4"/></svg><small>CASE 04</small></div></div></div></section>
+      <div class="wrap case-layout"><aside class="case-toc"><p class="eyebrow">本页内容</p><nav aria-label="本页内容"><a href="#product">产品简介</a><a href="#recruitment">目标与招募</a><a href="#interview">访谈提纲</a><a href="#coding">NVivo 主题</a><a href="#concepts">从访谈到设计</a><a href="#validation">用户测试</a></nav></aside>
+      <div class="chapters"><section class="chapter" id="product"><h2>产品简介</h2><p class="prose">我希望用户在出门或睡前也能直接和喜欢的角色对话。设备基于小智系统，通过 API 获取对话回复，再由设备播放云端生成的语音。写入角色 Prompt 后，设备就能用设定好的角色来回应。</p><figure class="diagram voice-architecture" id="voice-chain" aria-labelledby="voice-title">
+      <h3 id="voice-title">语音交互的技术实现</h3>
+      <figcaption>按小智 ESP32-S3 Wi-Fi 参考方案说明。器件型号为参考选型。</figcaption>
+      <ol class="voice-path">
+        <li><span class="eyebrow">设备端 · 输入</span><strong>采集语音</strong><span>INMP441 → ESP32-S3</span></li>
+        <li><span class="eyebrow">网络</span><strong>传输音频</strong><span>Opus / WebSocket</span></li>
+        <li><span class="eyebrow">云端</span><strong>生成角色回复</strong><span>ASR → LLM → TTS</span></li>
+        <li><span class="eyebrow">设备端 · 输出</span><strong>播放回复</strong><span>MAX98357A → 扬声器</span></li>
+      </ol>
+      <dl class="voice-details">
+        <div><dt>采音和断句</dt><dd>INMP441 数字麦克风通过 I²S 把语音送进 ESP32-S3。参考固件可通过按键或唤醒词进入聆听。按板型与固件配置，音频前端可用语音活动检测（VAD）判断哪里有说话、哪里是停顿。</dd></div>
+        <div><dt>音频上行</dt><dd>小智固件把采集到的音频压缩成 Opus 帧，通过 Wi-Fi 上的 WebSocket 发给服务端。音频用二进制帧传输，开始聆听、结束聆听等状态用 JSON 消息同步。</dd></div>
+        <div><dt>角色如何回答</dt><dd>云端语音识别（ASR）把语音转成文本。对话模型结合当轮文本、会话上下文和角色 Prompt 生成回复，再由语音合成（TTS）转为角色语音。我的角色规则主要定义说话风格和不同情绪下的回应方式。</dd></div>
+        <div><dt>回放和下一轮</dt><dd>服务端分帧下发合成语音，ESP32-S3 解码后经 I²S 送入 MAX98357A 数字功放，由扬声器播放。播报结束后，设备按会话模式继续聆听或回到待机。</dd></div>
+      </dl>
+      <aside class="voice-note"><strong>便携设备的交互取舍</strong><p>缩小外壳后，麦克风更容易收到扬声器自己的声音。播报中能否打断，取决于板型、回声消除与会话模式。出门使用时，Wi-Fi 方案的回复也受网络质量影响。</p></aside>
+      <p class="voice-sources">技术参考 · <a href="https://xiaozhi.me/home/zh/getting-started/">小智硬件清单</a> · <a href="https://github.com/78/xiaozhi-esp32/blob/main/docs/websocket_zh.md">小智 WebSocket 协议</a> · <a href="https://docs.espressif.com/projects/esp-sr/en/latest/esp32s3/audio_front_end/README.html">乐鑫语音前端</a></p>
+    </figure></section><section class="chapter" id="recruitment"><h2>研究目标和招募对象</h2><ul class="tags"><li>理解角色互动习惯</li><li>识别语音陪伴期待</li><li>比较记忆和实时互动吸引力</li><li>探索载体与风险</li></ul><div class="cards cols-2 "><article class="card"><h3>招募条件</h3><p>近一年体验过至少两款乙女游戏；有相关付费经历；对虚拟角色情感互动持积极态度；有智能音箱或AI对话产品使用经验。</p></article><article class="card"><h3>研究方式</h3><p>我独立设计访谈提纲并访谈了 20 位目标用户。提纲按约 30 分钟设计，访谈后用 NVivo 进行开放编码和主题提炼。</p></article></div></section><section class="chapter" id="interview"><h2>访谈具体问什么</h2><div class="cards cols-3 "><article class="card"><h3>A 背景与行为</h3><p>平时玩哪些乙女游戏？偏好角色的什么特征？什么时候互动？这些体验满足什么需求？</p></article><article class="card"><h3>B 交互核心要素</h3><p>理想的AI性格是什么？偏好怎样的声音？希望它记住什么？希望记忆在什么时候被主动提起？</p></article><article class="card"><h3>C 场景与产品边界</h3><p>睡前、通勤或工作间隙怎么用？理想载体是什么？哪些功能值得付费？担心出戏、尴尬或失去控制吗？</p></article></div><p class="note">部分问题提供概念提示，旨在收集探索性反馈。上市后的购买意愿需另行验证。</p></section><section class="chapter" id="coding"><h2>从逐字稿到四组主题</h2><div class="cards cols-2 clusters"><article class="card"><h3>情感与关系</h3><ul class="tags"><li>陪伴</li><li>情感寄托</li><li>安全感</li><li>治愈</li><li>被理解</li><li>专属</li></ul></article><article class="card"><h3>核心功能</h3><ul class="tags"><li>声音</li><li>人设</li><li>长期记忆</li><li>主动互动</li><li>沉浸感</li><li>真实感</li></ul></article><article class="card"><h3>使用场景与载体</h3><ul class="tags"><li>睡前</li><li>通勤</li><li>脱离屏幕</li><li>棉花娃娃</li><li>实体</li><li>机器人</li></ul></article><article class="card"><h3>体验风险</h3><ul class="tags"><li>出戏</li><li>角色OOC</li><li>不自然和尴尬</li></ul></article></div><ol class="flow "><li><span class="step">01</span><strong>录音转写与校对</strong></li><li><span class="step">02</span><strong>开放编码</strong></li><li><span class="step">03</span><strong>归类</strong></li><li><span class="step">04</span><strong>主题提炼</strong></li><li><span class="step">05</span><strong>产品需求</strong></li></ol></section><section class="chapter" id="concepts"><h2>从访谈到设计</h2><div class="concepts">
+      <article class="card concept"><h3>便携语音交互</h3><p>访谈里，用户提到睡前和出门时希望随时开口交流。我把便携和实时语音作为硬件的重点，完成了硬件选型、电路焊接与原型设计。</p></article>
+      <article class="card concept"><h3>角色设定与多轮对话</h3><p>用户希望熟悉的角色能保持自己的说话方式。我用 Prompt 配置角色性格、语言风格、多轮对话逻辑和情感识别策略。</p></article>
+      <article class="card concept"><h3>后续探索 · 记忆与周边载体</h3><p>访谈也提出了自然调用长期记忆、把语音模块放入熟悉周边的需求，这两点可以继续验证。</p></article>
+    </div></section><section class="chapter" id="validation"><h2>用户测试</h2><p class="prose">硬件制作完成后，我招募目标用户进行原型可用性测试，观察在具体场景中，用户能否顺畅开始语音对话，以及设备是否能提供所期待的情感回应。</p></section></div></div></main><div class="next wrap"><a href="index.html#work">← 项目目录</a><a class="btn primary" href="index.html#work">返回 · 全部项目 <span aria-hidden="true">→</span></a></div>
+  <footer class="site-footer"><div class="wrap footer-inner"><div><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">✳</span><span><b>FAYNE</b><small>AI COMPANION</small></span></a><p>商业项目数据经脱敏处理。对话质量页的对话为教学示例。</p></div>
+    <nav aria-label="页脚导航"><a href="index.html#work">项目目录</a><a href="index.html#about">关于我</a><a href="#top">回到顶部 ↑</a></nav>
+  </div></footer>
+</body></html>

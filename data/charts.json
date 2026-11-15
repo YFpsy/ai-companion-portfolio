@@ -1,0 +1,62 @@
+{
+  "usage_scenarios": {
+    "title": "AI 陪伴用户使用场景",
+    "scope": "选中招募样本 · 多选 · 比例仅描述该样本，各项之和可超过 100%。",
+    "data": [
+      {
+        "label": "日常陪伴",
+        "percent": 83.3
+      },
+      {
+        "label": "智力/哲学探讨",
+        "percent": 78.3
+      },
+      {
+        "label": "情感支持",
+        "percent": 76.7
+      },
+      {
+        "label": "生活/工作助理",
+        "percent": 75.0
+      },
+      {
+        "label": "灵感与创意",
+        "percent": 71.7
+      },
+      {
+        "label": "角色扮演",
+        "percent": 51.7
+      },
+      {
+        "label": "娱乐",
+        "percent": 35.0
+      }
+    ]
+  },
+  "desired_capabilities": {
+    "title": "用户眼中的理想 AI 应该是什么样",
+    "scope": "独立体验前反馈 · 最多选三项 · 比例反映用户期待，正式内测评分另行收集。",
+    "data": [
+      {
+        "label": "专属记忆",
+        "percent": 81.3
+      },
+      {
+        "label": "情绪共情",
+        "percent": 62.5
+      },
+      {
+        "label": "真实陪伴感",
+        "percent": 37.5
+      },
+      {
+        "label": "意图理解",
+        "percent": 37.5
+      },
+      {
+        "label": "逻辑与深度",
+        "percent": 31.3
+      }
+    ]
+  }
+}

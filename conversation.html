@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="卢祎璠的 AI 陪伴产品研究与体验设计作品集">
+  <meta name="theme-color" content="#f8f7f3">
+  <title>什么才算一条好的AI陪伴回复？ · FAYNE</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body id="top" class="page-2">
+  <a class="skip" href="#main">跳到正文</a>
+  <header class="site-header"><div class="wrap header-inner"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">✳</span><span><b>FAYNE</b><small>AI COMPANION</small></span></a>
+    <button class="menu" type="button" aria-expanded="false" aria-controls="global-nav">菜单 <span aria-hidden="true">☰</span></button>
+    <nav id="global-nav" aria-label="网站导航"><a href="meituan.html">美团 WOW</a><a href="conversation.html" aria-current="page">对话质量</a><a href="prompt.html">角色 Prompt</a><a href="hardware.html">语音硬件</a><a class="about-nav" href="index.html#about">关于我 <span aria-hidden="true">↗</span></a></nav>
+  </div></header>
+  <main id="main"><section class="case-hero"><div class="wrap">
+      <a class="back" href="index.html#work">← 项目目录</a>
+      <div class="case-intro"><div><p class="eyebrow">CASE 02 · Conversation Quality Framework · 方法梳理（基于团队协作研究）</p>
+      <h1>什么才算一条好的AI陪伴回复？</h1><p class="subtitle">情绪准确、意图匹配、内容可信、关系连续——比“语气温柔”更重要。</p>
+      <p class="prose">同样一句“我今天真的很累”，有人只是想被听见，有人期待一套解决办法，还有人是在分享今天发生的事。把所有情况都当作“需要安慰”，或者一律提供方法，都可能带来错位体验。我的思考是：先理解用户真正想做什么，再选择合适的回应方式，并通过案例和评测标准判断回复质量。</p></div>
+      <div class="case-emblem tone-2" aria-hidden="true"><span>CONVERSATION QUALITY</span><svg class="icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M26 6H6a3 3 0 0 0-3 3v11a3 3 0 0 0 3 3h3v4l6-4h11a3 3 0 0 0 3-3V9a3 3 0 0 0-3-3Z"/><path d="M9 14h14m-14 4h9"/></svg><small>CASE 02</small></div></div></div></section>
+      <div class="wrap case-layout"><aside class="case-toc"><p class="eyebrow">本页内容</p><nav aria-label="本页内容"><a href="#input">理解输入</a><a href="#strategies">七类回复策略</a><a href="#modules">三种回复模块</a><a href="#demos">对话演示</a><a href="#feedback">迭代任务</a></nav></aside>
+      <div class="chapters"><section class="chapter" id="input"><h2>用户实际表达了什么</h2><div class="cards cols-3 input-cards"><article class="card"><h3>意图</h3><p>求陪伴 / 求安慰 / 求解释 / 求建议 / 普通分享 / 意图不明。</p></article><article class="card"><h3>情绪</h3><p>主导情绪是什么？是否同时存在多种情绪？强度怎样？有没有未经证实的心理推断？</p></article><article class="card"><h3>上下文</h3><p>前文发生了什么？用户明确说过的事实、关系偏好和当前阶段是什么？</p></article></div><p class="prose">意图与情绪不能混为一谈。用户可以带着愤怒明确求解决方案，也可以在很平静的时候仅仅希望有人陪着聊天。回复策略要由当前任务和情境共同决定；看不清楚时，适当澄清比强行“读心”更可靠。</p></section><section class="chapter" id="strategies"><h2>按场景选择七类回应策略</h2><p class=note>展开每一项，查看适用情境与回应要点。</p><div class="strategy-grid"><details class="details strategy"><summary><span class="letter">A</span><b>基础陪伴</b></summary><p>当用户想倾诉或需要被听见——引用具体细节、维持在场感，不急着解决。</p></details><details class="details strategy"><summary><span class="letter">B</span><b>安慰支持</b></summary><p>当用户受伤、焦虑或自责——接住情绪，提供贴合事实的支持，避免空泛鼓励。</p></details><details class="details strategy"><summary><span class="letter">C</span><b>分析解释</b></summary><p>当用户追问原因、动机或逻辑——组织解释、呈现不同视角，不擅自确定他人动机。</p></details><details class="details strategy"><summary><span class="letter">D</span><b>行动指导</b></summary><p>当用户明确问“怎么办”——给出可执行步骤、优先级和下一步。</p></details><details class="details strategy"><summary><span class="letter">E</span><b>价值意义</b></summary><p>当用户困惑于意义、目标和自我评价——帮助梳理价值与已有资源，避免强行正能量。</p></details><details class="details strategy"><summary><span class="letter">F</span><b>轻量互动</b></summary><p>当用户分享趣事、闲聊或开玩笑——轻松承接，不把每次聊天都变成深度咨询。</p></details><details class="details strategy"><summary><span class="letter">G</span><b>最低限度回应</b></summary><p>无意义输入、测试消息或不需要展开的信号——简单澄清或轻轻带过，避免过度解读。</p></details></div></section><section class="chapter" id="modules"><h2>回复的三个可操作模块</h2><div class="cards cols-3 module-cards"><article class="card"><h3>共情理解</h3><p>在场、镜映、引用细节、反思式倾听、温和验证情绪假设。作用是让用户感到“具体事情被听见”，而不是堆叠形容词。</p></article><article class="card"><h3>行动建议</h3><p>提供框架、展现多元视角、拆解微小行动或完整计划。只有用户需要时才给相应深度。</p></article><article class="card"><h3>结尾策略</h3><p>澄清确认、邀请继续、给予具体支持，或者干净地结束。不是每一轮都必须追问。</p></article></div><p class="prose">设计回复时，先判断本轮需要哪些模块，再决定比例。比如一条求安慰的消息可能需要大量理解、极少行动建议；一条明确的产品问题则需要先答重点，再补足步骤。</p></section><section class="chapter" id="demos"><h2>两段对话，两种回应时机</h2><p class=note>以下为根据评价方法编写的匿名化教学示例，不是原用户记录或历史模型原始输出。</p><div class="demo" data-tabs><div class="tablist" role="tablist" aria-label="演示情境">
+      <button id="tab-A" type="button" role="tab" aria-controls="demo-A" aria-selected="true">A · 只想倾诉</button>
+      <button id="tab-B" type="button" role="tab" aria-controls="demo-B" aria-selected="false" tabindex="-1">B · 明确求助</button>
+      </div><section class="demo-body" id="demo-A" role="tabpanel" aria-labelledby="tab-A">
+          <h3>用户只想倾诉：回复策略错配</h3><div class="demo-user"><b>用户消息</b><p>「今天开会我刚讲两句就被打断了。其实准备了挺久的，现在真的不想听什么改进建议，只想吐槽一下。」</p></div>
+          <div class="demo-replies"><article><h4>错位回应</h4><p>「建议你先复盘汇报结构，再练习表达。下次可以准备三分钟的精简版本，并主动请领导反馈。只要持续改进，你一定会越来越好。」</p><details class="details"><summary>为什么不理想</summary><ul><li>用户明确说“不想听建议”，模型却立即给出了方案。</li><li>只关注工作问题，忽略被打断之后的委屈和挫败。</li><li>“一定会越来越好”没有具体依据，对当前情境帮助有限。</li></ul></details></article>
+          <article><h4>更适配的回应</h4><p>「准备了那么久，结果才开口就被打断，确实很让人憋屈。尤其你现在连那份准备都没机会好好展示出来。想吐槽就说，我先听着，不急着帮你复盘。」</p><details class="details"><summary>为什么更合适</summary><ul><li><strong>意图</strong>：识别用户当前要的是倾诉而非解决。</li><li><strong>情绪</strong>：回应“准备被打断”的具体挫败来源，不凭空诊断。</li><li><strong>策略</strong>：选择A基础陪伴，适度结合B安慰支持。</li><li><strong>节奏</strong>：没有强制继续追问，也没有把下一轮带进解决问题。</li></ul></details></article></div></section><section class="demo-body" id="demo-B" role="tabpanel" aria-labelledby="tab-B">
+          <h3>用户明确求助：过度安慰也可能不合适</h3><div class="demo-user"><b>用户消息</b><p>「我需要明天跟项目经理汇报招募不足。35—54岁组还缺58份，只剩两天，按现有渠道每天最多新增15份。你能帮我组织成四句话吗？」</p></div>
+          <div class="demo-replies"><article><h4>错位回应</h4><p>「听起来你承受了很大压力，真让人心疼。你已经很努力了，先别太焦虑，慢慢来，一切都会好起来的。」</p><details class="details"><summary>为什么不理想</summary><ul><li>对用户的明确任务“组织四句话”没有直接交付。</li><li>共情有余，信息和可执行性不足。</li></ul></details></article>
+          <article><h4>更适配的回应</h4><p>「可以，按‘事实—风险—建议—决策’汇报：<br>1. 中年组目标100份，目前42份，还缺58份。<br>2. 按现有每日最多15份，两天后预计仍缺28份，存在延期风险。<br>3. 建议立即补充定向招募渠道，并评估新增资源能否提高产能。<br>4. 请您确认追加渠道资源；若无法补齐，建议尽快协商交付时间。」</p><details class="details"><summary>为什么更合适</summary><ul><li><strong>意图</strong>：明确的任务性请求，直接提供结果。</li><li><strong>策略</strong>：优先采用D行动指导，简洁高效。</li><li><strong>逻辑</strong>：数字与可采取动作一一对应，且保留授权边界。</li><li><strong>节奏</strong>：不强迫用户继续讨论自身情绪。</li></ul></details></article></div></section></div></section><section class="chapter" id="feedback"><h2>把反馈变成可复现的迭代任务</h2><div class="fixes"><div class="fix"><span><strong>情绪被识别，但回复一上来给方案</strong></span><span>标签“策略错配”</span><span>增加“用户只想倾诉”的评测用例。</span></div><div class="fix"><span><strong>多轮对话中编造用户经历</strong></span><span>标签“记忆真实性”</span><span>检查记忆来源与无依据补全。</span></div><div class="fix"><span><strong>连续追问使人疲惫</strong></span><span>标签“节奏不自然”</span><span>增加问句频率/完成感相关评测项。</span></div></div><details class="details memory"><summary>案例 C · 从记忆错误到可复现问题</summary>
+      <p>「我昨天已经告诉你我不喝咖啡了，为什么今天又推荐我买拿铁？」</p>
+      <p>同一条回复可能涉及偏好存储、召回或生成环节。先核对偏好是否更新，再确认当轮是否召回以及回复是否正确使用。</p>
+      <dl><div><dt>场景</dt><dd>用户已明确更改饮食偏好后，在次日咨询饮品</dd></div><div><dt>预期</dt><dd>推荐符合更新偏好的饮品，必要时确认条件</dd></div><div><dt>实际问题</dt><dd>推荐被明确拒绝的咖啡饮品</dd></div><div><dt>问题标签</dt><dd>记忆召回 / 偏好更新 / 回答一致性</dd></div><div><dt>需要复核</dt><dd>更新是否入库、召回是否成功、是否发生错误引用</dd></div><div><dt>潜在修复</dt><dd>加强偏好更新与回归用例测试</dd></div></dl></details><p class="prose">好的AI陪伴体验不是永远同一种“温柔”，而是在正确理解用户的基础上，选择正确程度的靠近、解释或行动。这套方法的价值，是让主观的“好不好聊”逐渐变成可讨论、可复现、可优化的问题。</p><p class="note">依据团队研究资料与个人产品体验研究归纳整理。</p></section></div></div></main><div class="next wrap"><a href="index.html#work">← 项目目录</a><a class="btn primary" href="prompt.html">下一案例 · 角色 Prompt <span aria-hidden="true">→</span></a></div>
+  <footer class="site-footer"><div class="wrap footer-inner"><div><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">✳</span><span><b>FAYNE</b><small>AI COMPANION</small></span></a><p>商业项目数据经脱敏处理。对话质量页的对话为教学示例。</p></div>
+    <nav aria-label="页脚导航"><a href="index.html#work">项目目录</a><a href="index.html#about">关于我</a><a href="#top">回到顶部 ↑</a></nav>
+  </div></footer>
+</body></html>
